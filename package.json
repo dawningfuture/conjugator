@@ -1,7 +1,7 @@
 {
-  "name": "conjugate-beads",
+  "name": "conjugator",
   "version": "1.0.0",
-  "description": "Presents a visual representation of a conjugate of beads",
+  "description": "Finds a conjugate of integers",
   "author": "Matthew Thompson",
   "license": "MIT",
   "private": false,

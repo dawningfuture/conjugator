@@ -1,4 +1,4 @@
-# Conjugate Beads
+# Conjugator
 
 ## Install
 
@@ -6,7 +6,7 @@ Run `yarn` to install dependencies.
 
 ## Usage
 
-Run `yarn conjugate <beads>` to output the conjugate of the beads representation.
+Run `yarn conjugate <integers>` to output the conjugate of the integers input (represented as a comma-separated list of descending integers).
 
 ### Example
 
