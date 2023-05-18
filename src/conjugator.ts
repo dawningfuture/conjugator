@@ -1,33 +1,35 @@
 class Conjugator {
-  static conjugate(integers: number[]) {
-    const bead = 'X';
+  static conjugate(integers: number[], showBeads: boolean = false) {
+    const bead = '0';
 
     // Make square matrix with beads at correct positions
 
     const matrixSize = integers[0];
 
     let beadsMatrix = new Array(matrixSize).fill(
-      new Array(matrixSize)
+      new Array(matrixSize).fill('')
     ) as string[][];
 
-    for (let row = 0; row < matrixSize; row++) {
-      beadsMatrix[row] = new Array(matrixSize) as string[];
+    beadsMatrix = beadsMatrix.map((row, rowI) =>
+      row.map((_, columnI) => (columnI < integers[rowI] ? bead : ''))
+    );
 
-      for (let cell = 0; cell < matrixSize; cell++) {
-        beadsMatrix[row][cell] = cell < integers[row] ? bead : '';
-      }
+    if (showBeads) {
+      console.log('Input beads representation');
+
+      console.log(beadsMatrix);
     }
 
     // Transpose matrix
 
-    for (var row = 0; row < matrixSize; row++) {
-      for (var column = 0; column < row; column++) {
-        const temp = beadsMatrix[row][column];
+    beadsMatrix = beadsMatrix[0].map((_, columnI) =>
+      beadsMatrix.map((row) => row[columnI])
+    );
 
-        beadsMatrix[row][column] = beadsMatrix[column][row];
+    if (showBeads) {
+      console.log('Conjugated beads representation');
 
-        beadsMatrix[column][row] = temp;
-      }
+      console.log(beadsMatrix);
     }
 
     // Count beads in new positions
